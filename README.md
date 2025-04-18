@@ -1,6 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contexto Vietnamese
 
-## Getting Started
+A Vietnamese version of the word guessing game [Contexto](https://contexto.me/), built with Next.js.
+
+## About the Game
+
+In Contexto Vietnamese, you try to guess a secret Vietnamese word. After each guess, you'll be shown a ranking number indicating how semantically similar your guess is to the secret word. Lower rank numbers mean your word is closer in meaning to the target word.
+
+The game uses word embeddings to calculate semantic similarity between words. Each word is represented as a vector in a high-dimensional space, and similarity is calculated using cosine similarity between vectors.
+
+## Features
+
+- Vietnamese-only dictionary from Viet39K.txt
+- Word similarity rankings based on embeddings
+- Simple and intuitive UI
+- Unlimited guesses
+
+## Technical Implementation
+
+The game uses:
+
+- Next.js and React for the frontend
+- Word embeddings for semantic similarity calculations
+- A fixed Vietnamese dictionary (Viet39K.txt)
+
+In this demonstration implementation, we use random vectors for words since pre-trained Vietnamese word embeddings need to be loaded separately.
+
+## Development
 
 First, run the development server:
 
@@ -10,27 +35,18 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to play the game.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Enhancing the Model
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For a more meaningful semantic similarity experience, you should:
 
-## Learn More
+1. Replace the random vectors with pre-trained Vietnamese word embeddings
+2. Store the word vectors in the `data/word_vectors.json` file
+3. The format should be: `{"word": [vector_values], ...}`
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](https://choosealicense.com/licenses/mit/)
