@@ -1,0 +1,21 @@
+# Ignore all files in the components/ui directory
+components/ui/**/*
+
+# Ignore specific config files
+*.d.ts
+*.cjs
+tailwind.config.ts
+next.config.mjs
+postcss.config.mjs
+
+# Ignore stories
+stories/*
+ecosystem.config.js
+
+/.next/
+
+sentry.edge.config.ts
+sentry.server.config.ts
+sentry.client.config.ts
+
+supabase/db.types.ts
